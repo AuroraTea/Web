@@ -1,0 +1,43 @@
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: #1c1c1e;
+}
+
+.loading{
+    width: 76px;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    top: 45%;
+    margin: 0 auto;
+    animation: rotate 3s linear infinite;
+}
+
+@keyframes rotate{
+    to{transform: rotate(360deg);}
+}
+
+.loading span{
+    width: 32px;
+    height: 32px;
+    margin: 3px;
+}
+
+.loading span:nth-child(1){
+    background-color: #e5efc1;
+    border-radius: 50% 50% 0 50%;
+}
+.loading span:nth-child(2){
+    background-color: #a2d5ab;
+    border-radius: 50% 50% 50% 0;
+}
+.loading span:nth-child(3){
+    background-color: #39aea9;
+    border-radius: 50% 0 50% 50%;
+}
+.loading span:nth-child(4){
+    background-color: #557b83;
+    border-radius: 0 50% 50% 50%;
+}
