@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css?family=Kanit:900");
+
+body{
+  background: #EACCCC;
+  user-select: none;
+}
+
+.clock{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 452px;
+  /* 此处为油纸包里的UP精密计算得出,不过其实一开始就采用flex布局或者grid布局效果应该会更好,留待大家尝试一二. */
+}
+.clock p{
+  width: 70px;
+  text-align: center;
+
+  font-family: Kanit;
+  font-size: 100px;
+  color: #fff;
+  /* 以白桃粉为基础,利用一些小学二年级的简单计算易得: */
+  text-shadow: 
+  0 1px 0 #deafaf,
+  0 2px 0 #dba8a8,
+  0 3px 0 #d8a1a1,
+  0 4px 0 #d59999,
+  0 5px 0 #d29292,
+  0 6px 0 #cf8b8b,
+  0 7px 0 #cc8484,
+  0 8px 0 #c97d7d,
+  0 0 5px rgba(231, 156, 156, 0.05),
+  0 -1px 3px rgba(231, 156, 156, 0.2),
+  0 9px 9px rgba(231, 156, 156, 0.3),
+  0 12px 12px rgba(231, 156, 156, 0.3),
+  0 15px 15px rgba(231, 156, 156, 0.3);
+  /* 突然觉得不3D也挺好看的,你们怎么看呢? */
+
+  float: left;
+  margin: -3px;
+  /* 此处感谢 react和vue可兼得 提供的思路 */
+}
+.clock p:nth-child(3n){
+  width: 40px;
+}
