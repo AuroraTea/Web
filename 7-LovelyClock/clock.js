@@ -14,4 +14,5 @@ function myTime() {
   document.getElementById("7").innerText = Math.floor(ss / 10);
   document.getElementById("8").innerText = ss % 10;
 }
+myTime();
 setInterval(myTime,1000);
