@@ -88,6 +88,8 @@ input{
   outline: none;
   border: none;
   box-shadow: 0 4px 8px 0 rgba(78, 73, 79, .5);
+  transform-style: preserve-3d;
+  transform: translate3d(0, 0, 1px);
 }
 .login input:nth-child(-n+3){
   /* 选择class为login的子元素中的前三个input */
@@ -104,4 +106,5 @@ input{
   color: white;
   border-radius: 8px;
   margin-top: 15px;
+  cursor: pointer;
 }
