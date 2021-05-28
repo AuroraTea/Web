@@ -1,0 +1,23 @@
+/* 上次有人问最上面是啥
+  这里其实是引用了谷歌字体呀
+  上次是非等宽字体等宽显示,这次我们直接选用等宽字体 */
+  @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+    /* 这里的display=swap其实是个好东西,会在字体没加载完成的时候优先显示后备字体,此时选一个大家电脑上,客户端电脑上会有的字体就显示的很快,但是等下我会偷懒不这么做*/
+
+body{
+  background: radial-gradient(#0A2E38, #000 70%);
+  background-color: #0a2e38;
+  height: 100vh;
+  overflow: hidden;
+  user-select: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#clock{
+  color: #fff;
+  font-size: 100px;
+  font-family: 'Share Tech Mono';
+  text-shadow: 0 0 20px #0AAFE6, 0 2px 0 #DAF6FF;
+}
