@@ -1,0 +1,93 @@
+body{
+  margin: 0;
+  background-color: #f5f5f5;
+
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  /* 用flex划空间需要父元素有个具体的尺寸 */
+
+  -webkit-tap-highlight-color: transparent;
+}
+
+header{
+  height: 40px;
+  background-color: #333;
+  flex-shrink: 0;
+  /* 默认值为1 */
+}
+
+nav{
+  border-bottom: 1px solid #e6e6e6;
+  height: 80px;
+
+  display: flex;
+  justify-content: center;
+}
+nav a{
+  text-decoration: none;
+  /* 去掉下划线 */
+  font-size: 20px;
+  color: #000;
+  padding: 30px 10px;
+  margin: 0 20px;
+  /* 这样可以做出线分开的感觉 */
+}
+nav a:hover{
+  color: #ff6700;
+  border-bottom: 3px solid #ff6700;
+  transition: all .2s;
+  -webkit-transition: all .2s;
+  -moz-transition: all .2s;
+  -ms-transition: all .2s;
+  -o-transition: all .2s;
+  /*这些是兼容性代码*//*自动生成是靠的Autoprefixer插件*//*兼容这些浏览器的老版本,在那些版本里这是实验性功能*/;
+}
+
+.showcase{
+  flex-grow: 1;
+  margin-top: 20px;
+  /* 这里其实是给showcase划了100%(占据header和nav和footer的)的可伸缩空间 */
+
+  /* 之前的空行也是，为的是分开对自己的设置和对子元素的设置，好读 */
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.showcase a{
+  width: 270px;
+  /*width: 150px;
+  */height: 180px;
+  background-color: #fff;
+  margin: 20px;
+
+  transition-property: transform, box-shadow;
+  transition-duration: .3s, .3s;
+  /* 特定多个对象的话,不能用transition的嘞 */
+  /* transition本身就是tp和tduration和tdelay的简写来着 */
+
+  text-decoration: none;
+}
+.showcase a:hover{
+  transform: translateY(-8px);
+  -webkit-transform: translateY(-8px);
+  -moz-transform: translateY(-8px);
+  -ms-transform: translateY(-8px);
+  -o-transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, .1);
+}
+/* hover在移动端的效果不大好 */
+/* 可以用@media给移动端来点特殊效果 */
+/* 但是本视频就先不涉及@media了 */
+.showcase a img{
+  width: 270px;
+}
+.showcase a span{
+  display: block;
+  text-align: center;
+  color: #595959;
+}
+
+footer{
+  text-align: center;
+}
