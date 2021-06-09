@@ -46,13 +46,15 @@ nav a:hover{
 
 .showcase{
   flex-grow: 1;
+    /* 意思是header:nav:div.showcase:footer=0:0:1:0 */
   margin-top: 20px;
-  /* 这里其实是给showcase划了100%(占据header和nav和footer的)的可伸缩空间 */
 
   /* 之前的空行也是，为的是分开对自己的设置和对子元素的设置，好读 */
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  align-content: start;
+  /* 如果.showcase a的个数很少的话这句话是必要的哦 */
 }
 .showcase a{
   width: 270px;
