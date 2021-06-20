@@ -70,7 +70,7 @@ body{
   color: #25262B;
 }
 
-.login-app form{
+.login-body form{
   background-color: #fff;
   border-radius: 0 0 20px 20px;
   box-sizing: border-box;
@@ -101,7 +101,7 @@ body{
   cursor: pointer;
 }
 
-.login-app .vercode-btn{
+.m-login-form .vercode-btn{
   background-color: transparent;
   padding: 5px 12px;
   border-radius: 6px;
@@ -116,7 +116,7 @@ body{
   -o-border-radius: 6px;
 }
 
-.login-app .login-btn{
+.login-body .login-btn{
   width: 100%;
   height: 48px;
   background: linear-gradient(129.12deg, #446dff 0%, rgba(99, 125, 255, 0.75) 100%);
@@ -133,11 +133,11 @@ body{
 }
 
 
-.login-app #sure {
+.m-login-form #sure {
   /* visibility: hidden; */
   display: none;
 }
-.login-app .tobesure {
+.m-login-form .tobesure {
   box-sizing: border-box;
   background-color: #fff;
   border: 2px solid rgba(132, 133, 141, 0.2);
