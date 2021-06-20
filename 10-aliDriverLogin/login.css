@@ -73,13 +73,19 @@ body{
 }
 
 .login-body{
-  display: flex;
   border-radius: 0 0 20px 20px;
   -webkit-border-radius: 0 0 20px 20px;
   -moz-border-radius: 0 0 20px 20px;
   -ms-border-radius: 0 0 20px 20px;
   -o-border-radius: 0 0 20px 20px;
   overflow: hidden;
+
+  /* position: relative; */
+}
+
+.form-bar{
+  display: flex;
+
 }
 
 .login-body form{
@@ -93,6 +99,19 @@ body{
   color: rgba(37, 38, 43, 0.36);
 }
 
+/* #message:checked~.form-bar{
+  left: 0;
+}
+
+#username:checked~.form-bar{
+  left: 348px;
+}
+
+#qrcode:checked~.form-bar{
+  left: 696px;
+} */
+/* 又忘了只能影响同级之后的兄弟元素... */
+/* 只能等CSS4了... */
 
 
 .login-body input {
