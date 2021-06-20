@@ -33,7 +33,9 @@ body{
 .login-header label{
   display: inline-block;
   padding: 14px;
-  width: 34%;
+  width: 33.3%;
+  /* 并没有1/3 */
+  width: 100%;
   /* 好家伙原来在html里不能换行啊 */
   /* 那好烦 */
   /* 然后三个的时候也不知道怎么1/3，最后采用flex搞定 */
@@ -48,14 +50,14 @@ body{
   background-color: #f5f5f6;
   margin: 0;
 }
-.m-login-btn{
+.login-header .m-login-btn{
   border-radius: 12px 0 0 0;
   -webkit-border-radius: 12px 0 0 0;
   -moz-border-radius: 12px 0 0 0;
   -ms-border-radius: 12px 0 0 0;
   -o-border-radius: 12px 0 0 0;
 }
-.q-login-btn{
+.login-header .q-login-btn{
   border-radius: 0 12px 0 0;
   -webkit-border-radius: 0 12px 0 0;
   -moz-border-radius: 0 12px 0 0;
@@ -70,17 +72,28 @@ body{
   color: #25262B;
 }
 
-.login-body form{
-  background-color: #fff;
+.login-body{
+  display: flex;
   border-radius: 0 0 20px 20px;
-  box-sizing: border-box;
-  padding: 22px;
-  color: rgba(37, 38, 43, 0.36);
   -webkit-border-radius: 0 0 20px 20px;
   -moz-border-radius: 0 0 20px 20px;
   -ms-border-radius: 0 0 20px 20px;
   -o-border-radius: 0 0 20px 20px;
+  overflow: hidden;
 }
+
+.login-body form{
+  width: 348px;
+  flex-shrink: 0;
+  /* 使之不可以缩 */
+  background-color: #fff;
+
+  box-sizing: border-box;
+  padding: 22px;
+  color: rgba(37, 38, 43, 0.36);
+}
+
+
 
 .login-body input {
   width: 100%;
