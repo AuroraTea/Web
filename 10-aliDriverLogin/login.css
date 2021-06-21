@@ -83,6 +83,7 @@ body{
 
 #form-bar{
   display: flex;
+
   transition: transform .3s ease-in-out;
   -webkit-transition: transform .3s ease-in-out;
   -moz-transition: transform .3s ease-in-out;
@@ -171,7 +172,7 @@ body{
   /* visibility: hidden; */
   display: none;
 }
-.m-login-form .tobesure {
+.m-login-form label.tobesure {
   box-sizing: border-box;
   background-color: #fff;
   border: 2px solid rgba(132, 133, 141, 0.2);
@@ -182,7 +183,7 @@ body{
   position: absolute;
   left: 22px;
 }
-#sure:checked + .tobesure {
+#sure:checked + label.tobesure {
   background-color: #637dff;
 }
 label.tobesure:after {
@@ -214,12 +215,13 @@ label.tobesure:after {
 }
 
 label.tobesure{
-  top: 273px;
+  bottom: 50px;
   left: 60px;
 }
 label.tobesure p{
   margin: 0;
-  width: 290px;
+  margin-left: 20px;
+  width: 280px;
 
   font-size: 12px;
 }
