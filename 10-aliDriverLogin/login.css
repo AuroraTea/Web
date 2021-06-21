@@ -90,11 +90,12 @@ body{
   -ms-transition: transform .6s cubic-bezier(.25,.01,.25,1.3);
   -o-transition: transform .6s cubic-bezier(.25,.01,.25,1.3);
   transform: translateX(-100px);
-  /* 给定初值 */
-  -webkit-transform: translateX(-100px);
+  /*给定初值*/-webkit-transform: translateX(-100px);
   -moz-transform: translateX(-100px);
   -ms-transform: translateX(-100px);
   -o-transform: translateX(-100px);
+  /*当然也可以用直接在背后垫个白底的方法*/
+  /*哎确实那方法不错,还能给两边来个不会在移动中显示form内容的白边*/
 }
 
 #form-bar form-append{
@@ -247,7 +248,38 @@ label.tobesure p a{
   padding: 0 5px;
 }
 
+/* .q-login-form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
 
+.qrcode{
+  width: 128px;
+  height: 128px;
+  border-radius: 10px;
+
+  padding: 8px;
+  box-sizing: border-box;
+  
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0px 0px 1px 1px rgba(28, 28, 32, 0.05), 0px 8px 24px rgba(28, 28, 32, 0.12);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.qrcode img{
+  width: 100%;
+}
 
 /* 总结,这次用了很多绝对定位,这让我想到以前我以为这种 相对于父元素的定位方式叫做相对定位,以为绝对定位是相对于body来说的定位,因此对它很不屑.所以要记住真正的相对定位的相对是指相对于自己原本该在的位置. */
 
