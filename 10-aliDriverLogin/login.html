@@ -13,7 +13,7 @@
   <img src="logo.svg" class="logo" alt="">
 
   <div class="login-app">
-    <div class="login-header">
+    <div class="login-header" onclick="check()">
       <!-- 短信登录&&账号登录 -->
       <input type="radio" name="change-form" id="message" checked="checked"><label for="message" class="m-login-btn">短信登录</label>
       <input type="radio" name="change-form" id="username"><label for="username" class="u-login-btn">账号登录</label>
@@ -21,7 +21,7 @@
         <!-- name一样就是一组的单选 -->
     </div>
     <div class="login-body">
-      <div class="form-bar">
+      <div id="form-bar">
         <form class="m-login-form" action="">
           <input type="text" placeholder="请输入手机号码">
           <input type="text" placeholder="请输入验证码"><button class="vercode-btn">获取验证码</button>
@@ -46,7 +46,7 @@
     </div>
   </div>
 
-  <script src=""></script>
+  <script src="script.js"></script>
 </body>
 
 </html>

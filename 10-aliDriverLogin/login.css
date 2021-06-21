@@ -79,13 +79,15 @@ body{
   -ms-border-radius: 0 0 20px 20px;
   -o-border-radius: 0 0 20px 20px;
   overflow: hidden;
-
-  /* position: relative; */
 }
 
-.form-bar{
+#form-bar{
   display: flex;
-
+  transition: transform .3s ease-in-out;
+  -webkit-transition: transform .3s ease-in-out;
+  -moz-transition: transform .3s ease-in-out;
+  -ms-transition: transform .3s ease-in-out;
+  -o-transition: transform .3s ease-in-out;
 }
 
 .login-body form{
@@ -99,15 +101,15 @@ body{
   color: rgba(37, 38, 43, 0.36);
 }
 
-/* #message:checked~.form-bar{
+/* #message:checked~#form-bar{
   left: 0;
 }
 
-#username:checked~.form-bar{
+#username:checked~#form-bar{
   left: 348px;
 }
 
-#qrcode:checked~.form-bar{
+#qrcode:checked~#form-bar{
   left: 696px;
 } */
 /* 又忘了只能影响同级之后的兄弟元素... */
