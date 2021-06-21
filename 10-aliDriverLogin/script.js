@@ -5,12 +5,12 @@ let form_bar = document.getElementById('form-bar')
 
 function check(){
   if (login_opt[0].checked){
-    form_bar.style.transform = 'translateX(0)';
+    form_bar.style.transform = 'translateX(-100px)';
   }
   else if (login_opt[1].checked){
-    form_bar.style.transform = 'translateX(-348px)';
+    form_bar.style.transform = 'translateX(-448px)';
   }
   else{
-    form_bar.style.transform = 'translateX(-692px)';
+    form_bar.style.transform = 'translateX(-792px)';
   }
 }
