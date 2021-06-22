@@ -1,18 +1,25 @@
 body{
   background-color: #ecefff;
   user-select: none;
+
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 .logo{
   width: 216px;
-  position: absolute;
+  margin-bottom: 60px;
+  /* position: absolute;
   left: 50%;
   top: 19%;
   transform: translate(-50%);
   -webkit-transform: translate(-50%);
   -moz-transform: translate(-50%);
   -ms-transform: translate(-50%);
-  -o-transform: translate(-50%);
-  /* 在视频录制中会关掉插件,因为代码量已经比较大了,源代码中会给出 */
+  -o-transform: translate(-50%); */
 }
 
 .login-app{
@@ -20,11 +27,14 @@ body{
   /*height: 288px;
   *//*height: 326px;
   *//*height: 346px;
-  */position: absolute;
+  */
+  /* position: absolute;
   left: 50%;
   top: 58%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%); */
 }
+
+
 .login-header input[type="radio"]{
   display: none;
 }
@@ -57,6 +67,7 @@ body{
   -moz-border-radius: 12px 0 0 0;
   -ms-border-radius: 12px 0 0 0;
   -o-border-radius: 12px 0 0 0;
+  /* 在视频录制中会关掉插件,因为代码量已经比较大了,源代码中会给出 */
 }
 .login-header .q-login-btn{
   border-radius: 0 12px 0 0;
