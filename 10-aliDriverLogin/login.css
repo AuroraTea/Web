@@ -12,26 +12,12 @@ body{
 .logo{
   width: 216px;
   margin-bottom: 60px;
-  /* position: absolute;
-  left: 50%;
-  top: 19%;
-  transform: translate(-50%);
-  -webkit-transform: translate(-50%);
-  -moz-transform: translate(-50%);
-  -ms-transform: translate(-50%);
-  -o-transform: translate(-50%); */
+  -webkit-user-drag: none;
+  /* 图片不可拖曳 */
 }
 
 .login-app{
   width: 348px;
-  /*height: 288px;
-  *//*height: 326px;
-  *//*height: 346px;
-  */
-  /* position: absolute;
-  left: 50%;
-  top: 58%;
-  transform: translate(-50%,-50%); */
 }
 
 
@@ -192,7 +178,6 @@ body{
 
 
 .m-login-form #sure {
-  /* visibility: hidden; */
   display: none;
 }
 .m-login-form label.tobesure {
