@@ -1,5 +1,5 @@
 // 纯CSS计划告吹
-let login_opt = document.getElementsByName('change-form');
+let login_opt = document.getElementsByName('login-opt');
 let form_bar = document.getElementById('form-bar')
 
 

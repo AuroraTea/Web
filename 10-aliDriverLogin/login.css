@@ -18,6 +18,7 @@ body{
 
 .login-app{
   width: 348px;
+  margin-bottom: 40px;
 }
 
 
@@ -29,7 +30,7 @@ body{
 }
 .login-header label{
   display: inline-block;
-  padding: 14px;
+  padding: 16px;
   width: 33.3%;
   /* 并没有1/3 */
   width: 100%;
@@ -49,25 +50,16 @@ body{
 
   cursor: pointer;
 }
-.login-header .m-login-btn{
-  border-radius: 12px 0 0 0;
-  -webkit-border-radius: 12px 0 0 0;
-  -moz-border-radius: 12px 0 0 0;
-  -ms-border-radius: 12px 0 0 0;
-  -o-border-radius: 12px 0 0 0;
-  /* 在视频录制中会关掉插件,因为代码量已经比较大了,源代码中会给出 */
+.login-header .m-btn{
+  border-top-left-radius: 12px;
 }
-.login-header .q-login-btn{
-  border-radius: 0 12px 0 0;
-  -webkit-border-radius: 0 12px 0 0;
-  -moz-border-radius: 0 12px 0 0;
-  -ms-border-radius: 0 12px 0 0;
-  -o-border-radius: 0 12px 0 0;
+.login-header .q-btn{
+  border-top-right-radius: 12px;
 }
 
-#message:checked~.m-login-btn,
-#username:checked~.u-login-btn,
-#qrcode:checked~.q-login-btn{
+#message:checked~.m-btn,
+#username:checked~.u-btn,
+#qrcode:checked~.q-btn{
   background-color: #fff;
   color: #25262B;
   cursor: auto;
@@ -80,9 +72,8 @@ body{
   -ms-border-radius: 0 0 20px 20px;
   -o-border-radius: 0 0 20px 20px;
   overflow: hidden;
-
   background-color: #fff;
-  /* 也可以在#form-bar两边加一段, 我最开始采用的是那种方法哎 */
+  /*也可以在#form-bar两边加一段,我最开始采用的是那种方法哎*/
 }
 
 #form-bar{
@@ -98,18 +89,17 @@ body{
   width: 100px;
   flex-shrink: 0;
   /* 使之不可以缩 */
-  background-color: #fff;
 }
 
 #form-bar form
 {
-  width: 348px;
+  /* width: 348px; */
+  width: 100%;
   flex-shrink: 0;
   /* 使之不可以缩 */
 
   box-sizing: border-box;
   padding: 22px;
-  color: rgba(37, 38, 43, 0.36);
 
   position: relative;
 }
@@ -144,8 +134,12 @@ body{
   box-sizing: border-box;
 
   font-size: 14px;
+  color: #25262b;
 
   margin-bottom: 16px;
+}
+.login-body input::placeholder{
+  color: rgba(37, 38, 43, 0.36);
 }
 .login-body input:focus{
   border: 1px solid rgba(99, 125, 255, 0.48);
@@ -156,14 +150,15 @@ body{
   cursor: pointer;
 }
 
-.m-login-form .vercode-btn{
+.m-form .vercode-btn{
   background-color: transparent;
-  padding: 5px 12px;
+  padding: 4px 12px;
   border-radius: 6px;
   border: 1px solid rgba(99, 125, 255, 0.24);
   margin: 8px 0;
   position: absolute;
   right: 36px;
+  font-size: 14px;
   color: #637dff;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
@@ -174,7 +169,11 @@ body{
 .login-body .login-btn{
   width: 100%;
   height: 48px;
-  background: linear-gradient(129.12deg, #446dff 0%, rgba(99, 125, 255, 0.75) 100%);
+  background: linear-gradient(
+      129.12deg,                /* 沿着这个角度的线渐变 */
+      #446dff,                /* 渐变起点颜色 */
+      rgba(99, 125, 255, 0.75)/* 渐变终点颜色 */
+      );  /* 为什么数值这么奇怪, 因为我直接copy官方的 */
   border: none;
   border-radius: 10px;
 
@@ -188,10 +187,10 @@ body{
 }
 
 
-.m-login-form #sure {
+.m-form #sure {
   display: none;
 }
-.m-login-form label.tobesure {
+.m-form label.tobesure {
   box-sizing: border-box;
   background-color: #fff;
   border: 2px solid rgba(132, 133, 141, 0.2);
@@ -205,21 +204,26 @@ body{
 #sure:checked + label.tobesure {
   background-color: #637dff;
 }
+/*接下来做一个勾勾*/
 label.tobesure:after {
-  /* 要做一个勾勾 */
   content: "";
-  border: 2px solid #fff;
+  border: 2px solid #000;
+  position: absolute;
   border-top: none;
   border-right: none;
   width: 6px;
   height: 3px;
-  /* 以此来做出一个勾勾 */
-  /* 而后定位 */
+  /*以此来做出一个勾勾*/
+  /*而后定位*/
   position: absolute;
-  transform: translate(-50%,-50%)rotate(-45deg);
   top: 45%;
   left: 50%;
-  /* 同样是transform属性,如果再写一个的话当然是覆盖关系 */
+  transform: translate(-50%,-50%) rotate(-45deg);
+  /*同样是transform属性,如果再写一个的话当然是覆盖关系*/-webkit-transform: translate(-50%,-50%)rotate(-45deg);
+  -moz-transform: translate(-50%,-50%) rotate(-45deg);
+  -ms-transform: translate(-50%,-50%) rotate(-45deg);
+  -o-transform: translate(-50%,-50%) rotate(-45deg);
+  -webkit-transform: translate(-50%,-50%) rotate(-45deg);
 }
 
 #sure:not(:checked)
@@ -234,7 +238,7 @@ label.tobesure:after {
 }
 
 label.tobesure{
-  bottom: 50px;
+  bottom: 45px;
   left: 60px;
 }
 label.tobesure p{
@@ -243,18 +247,20 @@ label.tobesure p{
   width: 280px;
 
   font-size: 12px;
+  line-height: 1.5;
+  color: rgba(37, 38, 43, 0.36);
+
+  position: relative;
+  bottom: 3px;
+  /* relative是相对自己原本的位置 */
+  /* 这也就是向上移动3px */
+  /* 其实只是为了一点强迫症... */
 }
 label.tobesure p a{
   text-decoration: none;
   color: #637dff;
   padding: 0 5px;
 }
-
-/* .q-login-form{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
 
 .qrcode{
   width: 128px;
