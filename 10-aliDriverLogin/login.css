@@ -1,193 +1,265 @@
 body{
   background-color: #ecefff;
   user-select: none;
+  /* 这样用户点按钮的时候就不会选中文字, 更有沉浸感 */
+  /* 唉, 我没有教人做事的意思 */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
 }
+
 .logo{
   width: 216px;
-  position: absolute;
-  left: 50%;
-  top: 19%;
-  transform: translate(-50%);
-  -webkit-transform: translate(-50%);
-  -moz-transform: translate(-50%);
-  -ms-transform: translate(-50%);
-  -o-transform: translate(-50%);
+  margin-bottom: 60px;
 }
 
 .login-app{
   width: 348px;
-  /*height: 288px;
-  *//*height: 326px;
-  *//*height: 346px;
-  */position: absolute;
-  left: 50%;
-  top: 58%;
-  transform: translate(-50%,-50%);
+  margin-bottom: 60px;
+}
+
+.login-header{
+  display: flex;
 }
 .login-header input[type="radio"]{
   display: none;
 }
-.login-header{
-  display: flex;
-}
 .login-header label{
-  display: inline-block;
-  padding: 14px;
-  width: 34%;
-  /* 好家伙原来在html里不能换行啊 */
-  /* 那好烦 */
-  /* 然后三个的时候也不知道怎么1/3，最后采用flex搞定 */
-  color: rgba(37, 38, 43, 0.36);
-  /* 半透明字渲染起来呈现给我们的还会细一点 */
-  /* 为什么我会用透明度.36呢 */
-  /* 因为阿里云盘本来用的就是这个颜色呀啊哈哈哈哈 */
-  font-size: 18px;
-  
-  box-sizing: border-box;
-  text-align: center;
   background-color: #f5f5f6;
-  margin: 0;
+  font-size: 18px;
+  color: rgba(37, 38, 43, .36);
+
+  padding: 16px;
+  text-align: center;
+  width: 100%;
+  /* 这里并不是非得100%,利用的是flex的自动收缩,只要大于1/3就好了 */
+
+  cursor: pointer;
 }
-.m-login-btn{
-  border-radius: 12px 0 0 0;
-  -webkit-border-radius: 12px 0 0 0;
-  -moz-border-radius: 12px 0 0 0;
-  -ms-border-radius: 12px 0 0 0;
-  -o-border-radius: 12px 0 0 0;
+.login-header .m-btn{
+  border-top-left-radius: 12px;
 }
-.q-login-btn{
-  border-radius: 0 12px 0 0;
-  -webkit-border-radius: 0 12px 0 0;
-  -moz-border-radius: 0 12px 0 0;
-  -ms-border-radius: 0 12px 0 0;
-  -o-border-radius: 0 12px 0 0;
+.login-header .q-btn{
+  border-top-right-radius: 12px;
 }
 
-#message:checked~.m-login-btn,
-#username:checked~.u-login-btn,
-#qrcode:checked~.q-login-btn{
+#message:checked + .m-btn,
+#username:checked + .u-btn,
+#qrcode:checked + .q-btn{
   background-color: #fff;
-  color: #25262B;
+  color: #25262b;
+  cursor: default;
 }
 
-.login-app form{
-  background-color: #fff;
+/* 接下来是个悲伤的故事, 我不想重演了 */
+/* #message:checked~#form-bar{
+  left: 0;
+}
+
+#username:checked~#form-bar{
+  left: 348px;
+}
+
+#qrcode:checked~#form-bar{
+  left: 696px;
+} */
+/* 又忘了只能影响同级之后的兄弟元素... */
+/* 只能等CSS4了... */
+
+.login-body{
+  overflow: hidden;
   border-radius: 0 0 20px 20px;
-  box-sizing: border-box;
-  padding: 22px;
-  color: rgba(37, 38, 43, 0.36);
+  background-color: #fff;
+
   -webkit-border-radius: 0 0 20px 20px;
   -moz-border-radius: 0 0 20px 20px;
   -ms-border-radius: 0 0 20px 20px;
   -o-border-radius: 0 0 20px 20px;
 }
 
-.login-body input {
+#form-bar{
+  display: flex;
+
+  transition: transform .6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  /* 最初的打算其实本来是cubic-bezier(.25,.01,.25,1.3),但是觉得自己调的没有预设好最后就用了联想出来的 */
+  /* 这里其实是很重要的知识点:贝塞尔曲线. 但是我录视频的时候忘了讲!!! */
+  /* 因为实在是太困了来着,所以为什么录视频和做视频都拖到两天凌晨,太能拖了叭 */
+  /* 括号里的四个数字两两一组,分别是两个控制点的横坐标和纵坐标 */
+  /* 前面那个点和(时间轴和效果轴的起点(0,0))的连线是第一段曲度的控制线 */
+  /* 后面那个点是和(时间轴和效果轴的终点(1,1))连线是第二段曲度的控制线 */
+  /* 用过钢笔工具的话 就会有一个比较直观的理解 */
+  /* 推荐一个网站:https://cubic-bezier.com/   可以直观地看到效果、拖曳式的调整、复制产生的结果 */
+
+  /* transform: translateX(-100px); */
+
+  -webkit-transition: transform .6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -moz-transition: transform .6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -ms-transition: transform .6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -o-transition: transform .6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+/* 这个时候我又有两个思路了 */
+/* 首先想到的是,在两边各加一块白色的东西 */
+/* form-append{
+  width: 100px;
+  flex-shrink: 0;
+} */
+/* 然后想到的是 */
+/* 看上去好像第一种方法完全没必要 */
+/* 但是这实际上是两种思路啊!!! */
+
+.login-body form{
+  flex-shrink: 0;
+  /* 使之不会被收缩,百度吧我讲不清我太菜了 */
   width: 100%;
-  height: 46px;
-  background-color: rgba(39, 39, 41, 0.04);
-  border-radius: 8px;
-  border: none;
-  outline: none;
 
-  padding: 1px 12px;
   box-sizing: border-box;
-  font-size: 14px;
+  padding: 22px;
 
+  position: relative;
+}
+
+.login-body input{
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+  height: 46px;
   margin-bottom: 16px;
+  background-color: rgba(39, 39, 41, .04);
+  border: 1px solid transparent;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  /* 这个插件有点烦的, 如果注释多的话 */
+  /* 这次代码也多, 演示的话我就先把它关了 */
+  /* 源代码里兼容性代码会有的 */
+  /* 好家伙我明明应该已经关了来着 */
+  /* 可能这就是老年痴呆吧 */
+
+  font-size: 14px;
+  padding: 1px 12px;
+  color: #25262b;/* 看不出来变化吧,哎嘿! */
+}
+.login-body input::placeholder{
+  color: rgba(37, 38, 43, .36);
+}
+.login-body input:focus{
+  border: 1px solid rgba(99, 125, 255, .48);
+  background-color: #fff;
 }
 
-.login-body button{
-  cursor: pointer;
-}
-
-.login-app .vercode-btn{
-  background-color: transparent;
-  padding: 5px 12px;
+.m-form .vercode-btn{
+  padding: 4px 12px;
   border-radius: 6px;
-  border: 1px solid rgba(99, 125, 255, 0.24);
-  margin: 8px 0;
+  font-size: 14px;
+  color: #637dff;
+  background-color: transparent;
+  border: 1px solid rgba(99, 125, 255, .24);
+
   position: absolute;
   right: 36px;
-  color: #637dff;
+  margin: 8px 0;
+
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   -ms-border-radius: 6px;
   -o-border-radius: 6px;
 }
 
-.login-app .login-btn{
+.login-body .login-btn{
   width: 100%;
   height: 48px;
-  background: linear-gradient(129.12deg, #446dff 0%, rgba(99, 125, 255, 0.75) 100%);
   border: none;
   border-radius: 10px;
+  background: linear-gradient(
+    129.12deg,/* 沿着这个角度的线渐变 */
+    #446dff,/* 渐变起始颜色 */
+    rgba(99, 125 ,255, .75)/* 渐变终点颜色 */
+  );/* 为什么数值这么奇怪? -因为我直接copy官方的 */
 
   color: #fff;
   font-size: 16px;
-  
+
   margin-top: 16px;
-  margin-bottom: 23px;
   margin-bottom: 60px;
-  /* 下面的空间都要登录按钮来帮忙留了 */
 }
 
+button{
+  cursor: pointer;
+}
 
-.login-app #sure {
-  /* visibility: hidden; */
+.m-form #sure{
   display: none;
 }
-.login-app .tobesure {
+.m-form label.tobesure{
+  position: absolute;
+  border:  2px solid rgba(132, 133, 141, .2);
   box-sizing: border-box;
-  background-color: #fff;
-  border: 2px solid rgba(132, 133, 141, 0.2);
-  border-radius: 50%;
-  cursor: pointer;
   width: 16px;
   height: 16px;
-  position: absolute;
+  border-radius: 50%;
+  cursor: pointer;
+
   left: 22px;
 }
-#sure:checked + .tobesure {
+#sure:checked + label.tobesure{
   background-color: #637dff;
 }
-label.tobesure:after {
-  /* 要做一个勾勾 */
-  content: "";
-  border: 2px solid #fff;
-  border-top: none;
-  border-right: none;
+/* 文字位置安排好了, 现在来整个小勾√ */
+label.tobesure::after{
+  content: '';
+  border:  2px solid #fff;
+  position: absolute;
   width: 6px;
   height: 3px;
-  /* 以此来做出一个勾勾 */
-  /* 而后定位 */
-  position: absolute;
-  transform: translate(-50%,-50%)rotate(-45deg);
+  border-top: none;
+  border-right: none;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  /* 先平移再旋转好(方便的那个"好")定位... */
+  /* 这样就形成了一个勾勾 */
+  /* 然后定位至圆圈中间 */
   top: 45%;
   left: 50%;
-  /* 同样是transform属性,如果再写一个的话当然是覆盖关系 */
+  /* 等于说重新声明了transform, 所以应该放在一起 */
+
+  -webkit-transform: translate(-50%,-50%) rotate(-45deg);
+  -moz-transform: translate(-50%,-50%) rotate(-45deg);
+  -ms-transform: translate(-50%,-50%) rotate(-45deg);
+  -o-transform: translate(-50%,-50%) rotate(-45deg);
+  -webkit-transform: translate(-50%,-50%) rotate(-45deg);
 }
 
-#sure:not(:checked)
-~
-.login-btn
-{
-  /* 试了:disabled和unchecked和:not(:checked)都不行,就只好让按钮原本半透明,:checked以后不透明 */
-  /* 结果也没用 */
-  /* 哦是因为元素顺序 */
+#sure:not(:checked) ~ .login-btn{
   opacity: .5;
   cursor: not-allowed;
+  /* 试了:disabled和unchecked和:not(:checked)都不行,就只好让按钮原本半透明,:checked以后不透明 */
+  /* 结果也没用 */
+  /* 哦是因为元素顺序, 又忘了, 真丢人 */
+  /* 这里懒得复现问题了! 所以是这么个呈现形式! 这是当时的注释! */
 }
 
 label.tobesure{
-  top: 273px;
-  left: 60px;
+  bottom: 45px;
 }
 label.tobesure p{
   margin: 0;
-  width: 290px;
+  margin-left: 20px;
+  width: 280px;
 
   font-size: 12px;
+  line-height: 1.5;
+  color: rgba(37, 38, 43, .36);
+
+  position: relative;
+  bottom: 3px;
+  /* relative是相对自己原本的位置移动 */
+  /* 这里也就是向上移动3px */
+  /* 其实只是为了一点强迫症 */
 }
 label.tobesure p a{
   text-decoration: none;
@@ -195,8 +267,28 @@ label.tobesure p a{
   padding: 0 5px;
 }
 
+.qrcode{
+  width: 128px;
+  height: 128px;
+  box-shadow: 0px 0px 1px 1px rgba(28, 28, 32, 0.05), 0px 8px 24px rgba(28, 28, 32, 0.12);
+  padding: 8px;
+  box-sizing: border-box;/* 就应该写*里, 后悔了, 来不及了 */
+  border-radius: 10px;
 
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 40%;
+  left: 50%;
 
-/* 总结,这次用了很多绝对定位,这让我想到以前我以为这种 相对于父元素的定位方式叫做相对定位,以为绝对定位是相对于body来说的定位,因此对它很不屑.所以要记住真正的相对定位的相对是指相对于自己原本该在的位置. */
-
-/* 除了字体大小和登录键颜色别的没有用F12,一样的部分都是直接仿写的,所以很多地方可能会不如阿里的大佬,请见谅. */
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+.qrcode img{
+  width: 100%;
+}
