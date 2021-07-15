@@ -1,0 +1,59 @@
+@import url('https://fonts.font.im/css?family=Black+Ops+One');
+
+body{
+  background-color: #000;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+#clock p{
+  color: #fff;
+  font-family: 'Black Ops One';
+  font-size: 45px;
+  letter-spacing: 2px;
+
+  transform: scale(1.2);
+}
+
+#clock p:before,
+#clock p:after{
+  content: attr(data-text);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#clock p:before{
+  left: 2px;
+  text-shadow: -2px 0 0 #27C0C8;
+  animation: glitch-1 2s linear infinite reverse;
+}
+
+#clock p:after{
+  left: -2px;
+  text-shadow: -2px 0 0 #EA41B6;
+  animation: glitch-2 2s linear infinite reverse;
+}
+
+
+@keyframes glitch-1 {
+  @for $i from 0 through 20 {
+    #{percentage($i*(1/20))}{
+      clip: rect(random(100)+px, 350px, random(100)+px, 0px);
+    }
+  }
+}
+
+
+@keyframes glitch-2 {
+  @for $i from 0 through 20 {
+    #{percentage($i*(1/20))}{
+      clip: rect(random(100)+px, 350px, random(100)+px, 0px);
+    }
+  }
+}

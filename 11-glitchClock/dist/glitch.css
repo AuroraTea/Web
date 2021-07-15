@@ -1,0 +1,168 @@
+@import url("https://fonts.font.im/css?family=Black+Ops+One");
+body {
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+#clock p {
+  color: #fff;
+  font-family: "Black Ops One";
+  font-size: 45px;
+  letter-spacing: 2px;
+  transform: scale(1.2);
+}
+
+#clock p:before,
+#clock p:after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#clock p:before {
+  left: 2px;
+  text-shadow: -2px 0 0 #27C0C8;
+  animation: glitch-1 2s linear infinite reverse;
+}
+
+#clock p:after {
+  left: -2px;
+  text-shadow: -2px 0 0 #EA41B6;
+  animation: glitch-2 2s linear infinite reverse;
+}
+
+@keyframes glitch-1 {
+  0% {
+    clip: rect(98px, 350px, 10px, 0px);
+  }
+  5% {
+    clip: rect(60px, 350px, 25px, 0px);
+  }
+  10% {
+    clip: rect(65px, 350px, 44px, 0px);
+  }
+  15% {
+    clip: rect(71px, 350px, 31px, 0px);
+  }
+  20% {
+    clip: rect(72px, 350px, 76px, 0px);
+  }
+  25% {
+    clip: rect(60px, 350px, 84px, 0px);
+  }
+  30% {
+    clip: rect(96px, 350px, 94px, 0px);
+  }
+  35% {
+    clip: rect(14px, 350px, 55px, 0px);
+  }
+  40% {
+    clip: rect(97px, 350px, 59px, 0px);
+  }
+  45% {
+    clip: rect(15px, 350px, 7px, 0px);
+  }
+  50% {
+    clip: rect(91px, 350px, 97px, 0px);
+  }
+  55% {
+    clip: rect(1px, 350px, 77px, 0px);
+  }
+  60% {
+    clip: rect(31px, 350px, 27px, 0px);
+  }
+  65% {
+    clip: rect(82px, 350px, 88px, 0px);
+  }
+  70% {
+    clip: rect(10px, 350px, 90px, 0px);
+  }
+  75% {
+    clip: rect(95px, 350px, 20px, 0px);
+  }
+  80% {
+    clip: rect(24px, 350px, 93px, 0px);
+  }
+  85% {
+    clip: rect(58px, 350px, 81px, 0px);
+  }
+  90% {
+    clip: rect(28px, 350px, 34px, 0px);
+  }
+  95% {
+    clip: rect(55px, 350px, 98px, 0px);
+  }
+  100% {
+    clip: rect(91px, 350px, 29px, 0px);
+  }
+}
+@keyframes glitch-2 {
+  0% {
+    clip: rect(73px, 350px, 95px, 0px);
+  }
+  5% {
+    clip: rect(52px, 350px, 73px, 0px);
+  }
+  10% {
+    clip: rect(42px, 350px, 24px, 0px);
+  }
+  15% {
+    clip: rect(79px, 350px, 91px, 0px);
+  }
+  20% {
+    clip: rect(92px, 350px, 13px, 0px);
+  }
+  25% {
+    clip: rect(64px, 350px, 87px, 0px);
+  }
+  30% {
+    clip: rect(12px, 350px, 78px, 0px);
+  }
+  35% {
+    clip: rect(11px, 350px, 22px, 0px);
+  }
+  40% {
+    clip: rect(6px, 350px, 59px, 0px);
+  }
+  45% {
+    clip: rect(45px, 350px, 81px, 0px);
+  }
+  50% {
+    clip: rect(1px, 350px, 79px, 0px);
+  }
+  55% {
+    clip: rect(96px, 350px, 11px, 0px);
+  }
+  60% {
+    clip: rect(87px, 350px, 55px, 0px);
+  }
+  65% {
+    clip: rect(58px, 350px, 80px, 0px);
+  }
+  70% {
+    clip: rect(7px, 350px, 57px, 0px);
+  }
+  75% {
+    clip: rect(52px, 350px, 53px, 0px);
+  }
+  80% {
+    clip: rect(63px, 350px, 64px, 0px);
+  }
+  85% {
+    clip: rect(71px, 350px, 99px, 0px);
+  }
+  90% {
+    clip: rect(98px, 350px, 72px, 0px);
+  }
+  95% {
+    clip: rect(63px, 350px, 98px, 0px);
+  }
+  100% {
+    clip: rect(32px, 350px, 57px, 0px);
+  }
+}

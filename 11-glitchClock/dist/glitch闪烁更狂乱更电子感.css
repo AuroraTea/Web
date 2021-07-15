@@ -1,0 +1,176 @@
+@import url("https://fonts.font.im/css?family=Black+Ops+One");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+#clock p {
+  color: #fff;
+  font-size: 45px;
+  letter-spacing: 2px;
+  font-family: "Black Ops One", sans-serif;
+  transform: scale(1.2);
+}
+
+#clock p:before,
+#clock p:after {
+  content: attr(data-text);
+  background-color: #000;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  overflow: hidden;
+}
+
+#clock p:before {
+  left: 2px;
+  text-shadow: -2px 0 #27C0C8;
+  animation: glitch-1 2s 0s linear reverse infinite;
+}
+
+#clock p:after {
+  left: -2px;
+  text-shadow: -2px 0 #EA41B6;
+  animation: glitch-2 2s 0s linear reverse infinite;
+}
+
+@keyframes glitch-1 {
+  0% {
+    clip: rect(53px, 350px, 67px, 0px);
+  }
+  5% {
+    clip: rect(100px, 350px, 82px, 0px);
+  }
+  10% {
+    clip: rect(56px, 350px, 80px, 0px);
+  }
+  15% {
+    clip: rect(64px, 350px, 42px, 0px);
+  }
+  20% {
+    clip: rect(49px, 350px, 61px, 0px);
+  }
+  25% {
+    clip: rect(69px, 350px, 28px, 0px);
+  }
+  30% {
+    clip: rect(35px, 350px, 19px, 0px);
+  }
+  35% {
+    clip: rect(83px, 350px, 31px, 0px);
+  }
+  40% {
+    clip: rect(14px, 350px, 1px, 0px);
+  }
+  45% {
+    clip: rect(60px, 350px, 87px, 0px);
+  }
+  50% {
+    clip: rect(81px, 350px, 26px, 0px);
+  }
+  55% {
+    clip: rect(67px, 350px, 60px, 0px);
+  }
+  60% {
+    clip: rect(74px, 350px, 57px, 0px);
+  }
+  65% {
+    clip: rect(10px, 350px, 56px, 0px);
+  }
+  70% {
+    clip: rect(92px, 350px, 22px, 0px);
+  }
+  75% {
+    clip: rect(88px, 350px, 78px, 0px);
+  }
+  80% {
+    clip: rect(67px, 350px, 22px, 0px);
+  }
+  85% {
+    clip: rect(19px, 350px, 67px, 0px);
+  }
+  90% {
+    clip: rect(70px, 350px, 58px, 0px);
+  }
+  95% {
+    clip: rect(65px, 350px, 71px, 0px);
+  }
+  100% {
+    clip: rect(77px, 350px, 85px, 0px);
+  }
+}
+@keyframes glitch-2 {
+  0% {
+    clip: rect(99px, 350px, 45px, 0px);
+  }
+  5% {
+    clip: rect(93px, 350px, 77px, 0px);
+  }
+  10% {
+    clip: rect(88px, 350px, 12px, 0px);
+  }
+  15% {
+    clip: rect(32px, 350px, 77px, 0px);
+  }
+  20% {
+    clip: rect(73px, 350px, 27px, 0px);
+  }
+  25% {
+    clip: rect(92px, 350px, 1px, 0px);
+  }
+  30% {
+    clip: rect(80px, 350px, 83px, 0px);
+  }
+  35% {
+    clip: rect(42px, 350px, 14px, 0px);
+  }
+  40% {
+    clip: rect(6px, 350px, 13px, 0px);
+  }
+  45% {
+    clip: rect(40px, 350px, 1px, 0px);
+  }
+  50% {
+    clip: rect(43px, 350px, 99px, 0px);
+  }
+  55% {
+    clip: rect(88px, 350px, 59px, 0px);
+  }
+  60% {
+    clip: rect(90px, 350px, 36px, 0px);
+  }
+  65% {
+    clip: rect(6px, 350px, 2px, 0px);
+  }
+  70% {
+    clip: rect(36px, 350px, 49px, 0px);
+  }
+  75% {
+    clip: rect(93px, 350px, 70px, 0px);
+  }
+  80% {
+    clip: rect(36px, 350px, 40px, 0px);
+  }
+  85% {
+    clip: rect(27px, 350px, 22px, 0px);
+  }
+  90% {
+    clip: rect(96px, 350px, 80px, 0px);
+  }
+  95% {
+    clip: rect(67px, 350px, 69px, 0px);
+  }
+  100% {
+    clip: rect(82px, 350px, 17px, 0px);
+  }
+}

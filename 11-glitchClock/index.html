@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>故障风时钟</title>
+  <link rel="stylesheet" href="./dist/glitch.css">
+</head>
+<body>
+  <div id="clock">
+    <p v-bind:data-text="time">{{time}}</p>
+  </div>
+
+<script src="https://cdn.bootcss.com/vue/2.6.14/vue.js"></script>
+<script>
+  var app = new Vue({
+    el: '#clock',
+    data(){
+      return{
+        time: ''
+      }
+    }
+  })
+
+  const addZero = (num) => num<10 ? `0${num}` : num;
+
+  function updateTime(){
+    const now = new Date();
+    app.time = `${addZero(now.getHours())}:${addZero(now.getMinutes())}:${addZero(now.getSeconds())}`;
+  }
+
+  updateTime();
+  setInterval(updateTime, 1000);
+</script>
+</body>
+</html>
