@@ -1,7 +1,8 @@
 body{
     margin: 0;
     padding: 0;
-    background: #e94118;
+    /* background: #e94118; */
+    background-color: #FF670F;
 }
 
 .search-box{
@@ -13,6 +14,8 @@ body{
     height: 40px;
     border-radius: 40px;
     padding: 10px;
+    display: flex;
+    justify-content: center;
 }
 
 .search-box:hover>.search-txt{
@@ -25,7 +28,6 @@ body{
 }
 
 .search-btn{
-    color: #e84118;
     float: right;
     width: 40px;
     height: 40px;
