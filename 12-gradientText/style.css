@@ -11,7 +11,7 @@ body{
 }
 
 p{
-  font-size: 120px;
+  font-size: 90px;
   font-weight: 700;
   font-family: '思源黑体 CN';
   background-image:
@@ -25,7 +25,8 @@ p{
   /* 这次就连最新版Chrome和Safari都需要 */
   /* 注意是background-clip: text;需要 */
   /* 如果是： content-box啊之类的就没这么苛刻的 */
-  -webkit-text-fill-color: transparent;
+  /* -webkit-text-fill-color: transparent; */
+  color: transparent;
   /* 这个属性的-webkit-前缀也比较特殊 */
   /* 寻常的-webkit-表示的是Chrome和Safari的私有属性 */
   /* 但是它却声明了所有的（除了那位浏览器） */
@@ -43,8 +44,18 @@ p{
   background-size: 200%;
 }
 
-p:hover{
-  animation: streamer 2s linear infinite;
+p{
+  -webkit-animation: streamer 2s linear infinite;
+          animation: streamer 2s linear infinite;
+}
+
+@-webkit-keyframes streamer {
+  0%{
+    background-position: 0%;
+  }
+  100%{
+    background-position: 200%;
+  }
 }
 
 @keyframes streamer {
@@ -55,3 +66,15 @@ p:hover{
     background-position: 200%;
   }
 }
+
+
+/* @media screen and (max-width: 1050px) {
+  p{
+    font-size: 66px;
+  }
+}
+@media screen and (max-width: 765px) {
+  p{
+    font-size: 22px;
+  }
+} */
